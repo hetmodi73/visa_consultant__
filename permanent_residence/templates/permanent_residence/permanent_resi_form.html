@@ -1,0 +1,415 @@
+<!doctype html>
+{% load static %}
+{% load crispy_forms_field %}
+
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
+
+  <meta name="author" content="themefisher.com">
+
+  <title> {% block title %}
+
+	  {% endblock %} Megakit| Html5 Agency template
+  </title>
+
+  {% block css %}
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/dist/magnific-popup.css' %}">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  {% endblock %}
+
+</head>
+
+<body>
+
+{% block content %}
+
+<!-- Header Start -->
+
+<header class="navigation">
+	<div class="header-top ">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-lg-3 col-md-3">
+					<div class="header-top-socials text-left text-lg-left text-md-left">
+                        <div>
+                          <a class="navbar-brand" href="{% url 'index' %}">
+                            <span>
+                                <h4 STYLE="color: red">VISA CONSULTANT</h4>
+                            </span>
+                          </a>
+                        </div>
+
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-8 text-center text-lg-right text-md-right">
+					<div class="header-top-info">
+						<a href="tel:+23-345-67890" class="navbar-brand" style="color: red">Call Us : <span>+23-345-67890</span></a>
+						<a href="mailto:support@gmail.com" class="navbar-brand" style="color: red"><i class="fa fa-envelope mr-2"></i><span>support@gmail.com</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-expand-lg  py-4" id="navbar">
+		<div class="container">
+
+		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="fa fa-bars"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{% url 'about' %}" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown03">
+						<li><a class="dropdown-item" href="{% url 'about' %}">Our company</a></li>
+						<li><a class="dropdown-item" href="{% url 'pricing' %}">Pricing</a></li>
+					</ul>
+			  </li>
+
+			   <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{% url 'service_form' %}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown05">
+						<li><a class="dropdown-item" href="{% url 'service_form' %}">Services</a></li>
+						<li><a class="dropdown-item" href="{% url 'service_details_form' %}">Service Details</a></li>
+					</ul>
+			  </li>
+
+			   <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{% url 'visa_form' %}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visa Application</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown05">
+						<li><a class="dropdown-item" href="{% url 'visa_form' %}">Student Visa</a></li>
+						<li><a class="dropdown-item" href="{% url 'permanent_resi_form' %}">permanant Residence</a></li>
+					</ul>
+			  </li>
+
+			   <li class="nav-item"><a class="nav-link" href="{% url 'project' %}">Portfolio</a></li>
+			   <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="{% url 'document_form' %}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Document</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown05">
+						<li><a class="dropdown-item" href="{% url 'document_form' %}">User Documents</a></li>
+						<li><a class="dropdown-item" href="{% url 'question_form' %}">User Questions</a></li>
+                    </ul>
+			  </li>
+			   <li class="nav-item"><a class="nav-link" href="{% url 'contact_form' %}">Contact</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{% url 'feedback_form' %}">Feedback</a></li>
+			</ul>
+
+			<form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+			  <a href="{% url 'logout' %}" class="btn btn-solid-border btn-round-full">Logout</a>
+			</form>
+		  </div>
+		</div>
+	</nav>
+</header>
+
+<!-- Header Close -->
+
+<!-- Form Start -->
+
+                    <hr/>
+                        <h1 class="btn-dark" style="text-align: center; ">CANADIAN PERMANANT RESIDENCE FORM</h1>
+                    <hr/>
+
+    <section class="contact-form-wrap section">
+    <div class="container">
+
+                 <form   method="post">
+                     {% csrf_token %}
+
+                 <!-- form message -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                                Your message was sent successfully.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end message -->
+
+                    <div class="form-group">
+                    <h6>SKILLED EMPLOYMENT</h6>
+                        {% crispy_field form.SKILLED_EMPLOYMENT %}
+                            {% if  form.SKILLED_EMPLOYMENT.errors %}
+                                {% for error in form.SKILLED_EMPLOYMENT.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+{#                        <input name="SKILLED_EMPLOYMENT" type="text" class="form-control" placeholder="KILLED_EMPLOYMENT">#}
+                    </div>
+                    <div class="form-group">
+                    <h6>WORK EXPERIENCE</h6>
+                        {% crispy_field form.WORK_EXPERIENCE %}
+                            {% if  form.WORK_EXPERIENCE.errors %}
+                                {% for error in form.WORK_EXPERIENCE.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+{#                        <input name="EMAIL" type="email" class="form-control" placeholder="Enter Email Address">#}
+                    </div>
+                    <div class="form-group">
+                    <h6>QUALIFICATIONS</h6>
+                        {% crispy_field form.QUALIFICATIONS %}
+                            {% if  form.QUALIFICATIONS.errors %}
+                                {% for error in form.QUALIFICATIONS.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+{#                        <input name="NUMBER" type="text" class="form-control" placeholder="Enter Your Number">#}
+                    </div>
+
+                    <div class="form-group-2 mb-4">
+                    <h6>AGE</h6>
+                        {% crispy_field form.AGE_20TO55_YEARS %}
+                            {% if  form.AGE_20TO55_YEARS.errors %}
+                                {% for error in form.AGE_20TO55_YEARS.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>SKILLED EMPLOYMENT</h6>
+                        {% crispy_field form.Skilled_employment_2 %}
+                            {% if  form.Skilled_employment_2.errors %}
+                                {% for error in form.Skilled_employment_2.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>WORK EXPERIENCE</h6>
+                        {% crispy_field form.Work_experience_2 %}
+                            {% if  form.Work_experience_2.errors %}
+                                {% for error in form.Work_experience_2.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>ADDITIONAL BONUS POINTS</h6>
+                        {% crispy_field form.Additional_Bonus_Points %}
+                            {% if  form.Additional_Bonus_Points.errors %}
+                                {% for error in form.Additional_Bonus_Points.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>QUALIFICATIONS</h6>
+                        {% crispy_field form.QUALIFICATIONS_2 %}
+                            {% if  form.QUALIFICATIONS_2.errors %}
+                                {% for error in form.QUALIFICATIONS_2.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>PARTNER QUALIFICATION</h6>
+                        {% crispy_field form.Partner_Qualifications %}
+                            {% if  form.Partner_Qualifications.errors %}
+                                {% for error in form.Partner_Qualifications.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>USER</h6>
+                        {% crispy_field form.client %}
+                            {% if  form.client.errors %}
+                                {% for error in form.client.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>TEXT</h6>
+                        {% crispy_field form.text %}
+                            {% if  form.text.errors %}
+                                {% for error in form.text.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>CITY</h6>
+                        {% crispy_field form.city %}
+                            {% if  form.city.errors %}
+                                {% for error in form.city.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="form-group-2 mb-4">
+                    <h6>DOCUMENT</h6>
+                        {% crispy_field form.resume %}
+                            {% if  form.resume.errors %}
+                                {% for error in form.resume.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+
+
+<div align="center">
+                    <button class="btn btn-main"  type="submit">Submit</button>
+</div>
+                </form>
+            </div>
+</section>
+
+<!-- Form Close -->
+
+
+<!-- footer Start -->
+<footer class="footer section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Company</h4>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Quick Links</h4>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="{% url 'about' %}">About</a></li>
+						<li><a href="{% url 'service_form' %}">Services</a></li>
+						<li><a href="{% url 'about' %}">Team</a></li>
+						<li><a href="{% url 'contact_form' %}">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Subscribe Us</h4>
+					<p>Subscribe to get latest news article and resources  </p>
+
+					<form action="#" class="sub-form">
+						<input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
+						<a href="#" class="btn btn-main btn-small">subscribe</a>
+					</form>
+				</div>
+			</div>
+
+			<div class="col-lg-3 ml-auto col-sm-6">
+				<div class="widget">
+					<div class="logo mb-4">
+						<h3>VISA<span>CONSULTANT</span></h3>
+					</div>
+					<h6><a href="tel:+23-345-67890" >Support@megakit.com</a></h6>
+					<a href="mailto:support@gmail.com"><span class="text-color h4">+23-456-6588</span></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-btm pt-4">
+			<div class="row">
+				<div class="col-lg-6">
+{#					<div class="copyright">#}
+{#						&copy; Copyright Reserved to <span class="text-color">Megakit.</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>#}
+{#					</div>#}
+				</div>
+				<div class="col-lg-6 text-left text-lg-right">
+					<ul class="list-inline footer-socials">
+						<li class="list-inline-item"><a href="https://www.facebook.com/saleducationsal/"><i class="ti-facebook mr-2"></i>Facebook</a></li>
+						<li class="list-inline-item"><a href="https://mobile.twitter.com/salcampus"><i class="ti-twitter mr-2"></i>Twitter</a></li>
+						<li class="list-inline-item"><a href="https://www.linkedin.com/school/sal-college-of-engineering-113-/"><i class="ti-linkedin mr-2 "></i>Linkedin</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- footer End -->
+
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+
+    <!--
+    Essential Scripts
+    =====================================-->
+
+
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+   <!--  Magnific Popup-->
+    <script src="{% static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Slick Slider -->
+    <script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+    <!-- Counterup -->
+    <script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+
+    <!-- Google Map -->
+    <script src="{% static 'plugins/google-map/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock %}
+
+  </body>
+  </html>
